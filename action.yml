@@ -16,7 +16,7 @@ inputs:
     description: 'let you specify whether to build the target solution before starting the analysis'
 runs:
   using: 'docker'
-  image: 'DockerFile'
+  image: 'Dockerfile'
   args:
     - ${{ inputs.solution }}
     - '--project="${{ inputs.project }}"'

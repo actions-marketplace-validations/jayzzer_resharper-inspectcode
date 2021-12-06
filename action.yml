@@ -1,0 +1,22 @@
+name: 'Resharper InspectCode Action'
+author: 'Pavel (Jayzzer) Pushkarev'
+description: 'Simple action that runs the InspectCode utility from JetBrains'
+branding:
+  icon: 'code'
+  color: 'green'
+inputs:
+  solution:
+    description: 'Path to solution file'
+    required: true
+  project:
+    description: 'Name of the project to analyze'
+  build:
+    description: 'let you specify whether to build the target solution before starting the analysis'
+runs:
+  using: 'docker'
+  image: 'DockerFile'
+  args:
+    - ${{ inputs.solution }}
+    - '--project="${{ inputs.project }}"'
+    - '--build="${{ inputs.build }}"'
+    - '-o=report.xml'

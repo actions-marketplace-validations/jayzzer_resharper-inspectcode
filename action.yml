@@ -10,6 +10,8 @@ inputs:
     required: true
   project:
     description: 'Name of the project to analyze'
+  profile:
+    description: 'Path to project DotSettings'
   build:
     description: 'let you specify whether to build the target solution before starting the analysis'
 runs:
@@ -18,5 +20,6 @@ runs:
   args:
     - ${{ inputs.solution }}
     - '--project="${{ inputs.project }}"'
+    - '--profile="${{ inputs.profile }}"'
     - '--build="${{ inputs.build }}"'
     - '-o=report.xml'

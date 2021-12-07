@@ -20,6 +20,6 @@ runs:
   args:
     - ${{ inputs.solution }}
     - '--project="${{ inputs.project }}"'
-    - '--profile="${{ inputs.profile }}"'
+    - '--profile=${{ inputs.profile }}'
     - '--build="${{ inputs.build }}"'
     - '-o=report.xml'
